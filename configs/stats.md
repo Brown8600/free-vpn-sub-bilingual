@@ -1,6 +1,6 @@
 ## 订阅构建结果 / Subscription build result
 
-短名单合计 **1545** 个节点（全局去重）· 完整名单合计 **2037** 个节点 · 上限 / cap: 300
+短名单合计 **1826** 个节点（全局去重）· 完整名单合计 **2311** 个节点 · 上限 / cap: 300
 
 | # | 源 / Source | 组 / Group | 短名单 short | 完整 full | 状态 status |
 |---|---|---|---|---|---|
@@ -20,3 +20,5 @@
 | 22 | xray-config-toolkit / xray-config-toolkit | goida | 264 | 0 | ok |
 | 24 | STRUGOV / STRUGOV | goida | 300 | 0 | ok |
 | 25 | V2RayConfig / V2RayConfig | goida | 196 | 0 | ok |
+| 9 | telegram-v2ray-configs / telegram-v2ray-configs | goida | 226 | 0 | ok |
+| 23 | Xray / Xray | goida | 134 | 0 | ok |

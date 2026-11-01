@@ -3,8 +3,8 @@
   "max_short": 300,
   "sample_div": 4,
   "totals": {
-    "short": 1545,
-    "full": 2037
+    "short": 1826,
+    "full": 2311
   },
   "sources": [
     { "id": "27", "name_zh": "SS+All 黑名单", "name_en": "SS+All (black list)", "group": "igareck", "short": 79, "full": 0, "status": "ok" },
@@ -22,6 +22,8 @@
     { "id": "18", "name_zh": "v2ray", "name_en": "v2ray", "group": "goida", "short": 14, "full": 0, "status": "ok" },
     { "id": "22", "name_zh": "xray-config-toolkit", "name_en": "xray-config-toolkit", "group": "goida", "short": 264, "full": 0, "status": "ok" },
     { "id": "24", "name_zh": "STRUGOV", "name_en": "STRUGOV", "group": "goida", "short": 300, "full": 0, "status": "ok" },
-    { "id": "25", "name_zh": "V2RayConfig", "name_en": "V2RayConfig", "group": "goida", "short": 196, "full": 0, "status": "ok" }
+    { "id": "25", "name_zh": "V2RayConfig", "name_en": "V2RayConfig", "group": "goida", "short": 196, "full": 0, "status": "ok" },
+    { "id": "9", "name_zh": "telegram-v2ray-configs", "name_en": "telegram-v2ray-configs", "group": "goida", "short": 226, "full": 0, "status": "ok" },
+    { "id": "23", "name_zh": "Xray", "name_en": "Xray", "group": "goida", "short": 134, "full": 0, "status": "ok" }
   ]
 }
