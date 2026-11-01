@@ -1,0 +1,102 @@
+# =============================================================================
+# 自动更新订阅 / Automated subscription update
+# -----------------------------------------------------------------------------
+# 触发 / Triggers
+#   schedule      ：GitHub Actions cron 最短间隔是 5 分钟（不是 1 分钟）
+#                   GitHub cron's shortest interval is 5 minutes — 1 minute is not
+#                   possible on GitHub-hosted runners, and scheduled runs can be
+#                   delayed or skipped during peak load.
+#   workflow_dispatch：手动运行，可改上限 / manual run with custom cap.
+#                      外部定时器（cron-job.org、Cloudflare Worker 等）可调用
+#                      REST 接口实现接近每分钟：见 README「更快的更新频率」。
+#   push          ：只监听配置与脚本，避免机器人提交触发自身死循环
+#                   only config/script changes, so bot commits cannot loop.
+#
+# 提交策略 / Commit policy
+#   构建产物内部不含时间戳，上游没变 => 无 diff => 不产生提交。
+#   Artifacts carry no timestamps; unchanged upstream produces no commit.
+# =============================================================================
+name: 更新订阅 / Update subscriptions
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      max_short:
+        description: "短名单上限 / short list cap (nodes)"
+        required: false
+        default: "300"
+      sample_hint:
+        description: "抽样基准，仅写入 counts.json / sampling hint (metadata only)"
+        required: false
+        default: "4"
+  push:
+    branches: [main]
+    paths:
+      - "sources.tsv"
+      - "scripts/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: write
+
+# 同一时刻只允许一个构建，后到的排队而不是互相覆盖
+# one build at a time; later runs queue instead of clobbering each other
+concurrency:
+  group: update-subscriptions
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: 抓取并生成 / fetch & build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 检出仓库 / checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 构建订阅 / build subscriptions
+        env:
+          MAX_SHORT: ${{ inputs.max_short || '300' }}
+          SAMPLE_DIV: ${{ inputs.sample_hint || '4' }}
+        run: |
+          bash scripts/build.sh
+
+      - name: 写入运行摘要 / write run summary
+        if: always()
+        run: |
+          if [ -f configs/stats.md ]; then
+            cat configs/stats.md >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "运行时间 / run at: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: 检测产物变化 / detect artifact changes
+        id: diff
+        run: |
+          # last-update.txt 由本步骤之后写入，不计入变化判定
+          # last-update.txt is written later, so exclude it from the diff test
+          if git status --porcelain -- configs | grep -v 'configs/last-update.txt' | grep -q .; then
+            echo "changed=true"  >> "$GITHUB_OUTPUT"
+            echo "有变化，准备提交 / changes detected"
+            git status --short -- configs
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "无变化，跳过提交 / no changes, skipping commit"
+          fi
+
+      - name: 提交并推送 / commit & push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          # 数据真正变化时才写时间戳，保证空跑不产生提交
+          # stamp only on a real data change, so idle runs stay diff-free
+          date -u +%Y-%m-%dT%H:%M:%SZ > configs/last-update.txt
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add configs
+          git commit -m "chore(configs): 更新订阅数据 / update subscription data"
+          git push

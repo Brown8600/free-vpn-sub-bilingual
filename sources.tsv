@@ -1,0 +1,68 @@
+# =============================================================================
+# 源清单 / Source list
+# -----------------------------------------------------------------------------
+# 格式 / Format (TAB-separated):
+#   id <TAB> name_zh <TAB> name_en <TAB> url <TAB> variants
+#
+#   variants: short        -> 只生成短名单 configs/<id>.txt
+#             short+full   -> 同时生成完整名单 configs/full/<id>.txt
+#
+# 规则 / Rules:
+#   - 以 # 开头的行会被忽略 / lines starting with # are ignored
+#   - 只保留 vless/trojan/vmess/ss/hy2/hysteria2/tuic 协议行
+#   - 短名单：<= MAX_SHORT 条则全保留，否则均匀抽样到 MAX_SHORT 条
+#   - 同一节点（去掉 query/fragment 后相同）在同一源内只保留一次
+#
+# 注意 / Note:
+#   原项目引用的 AvenCores/goida-vpn-configs 已于 2026 年消失（HTTP 404）。
+#   下面 goida 段使用仍活跃的镜像 aneek0/goida-vpn-configs，并只默认启用小体积文件。
+#   The upstream repo AvenCores/goida-vpn-configs is gone (HTTP 404);
+#   the goida block below points at the live mirror aneek0/goida-vpn-configs
+#   and only enables the small files by default. Big ones are commented out:
+#     1.txt 1.7MB · 2.txt 100MB · 3.txt 3.2MB · 12.txt 450KB · 14.txt 4.3MB · 21.txt 12.7MB
+#   Uncomment only if you accept the bandwidth/runner time.
+# =============================================================================
+
+# --- igareck/vpn-configs-for-russia (活跃 / live, 实测可用) ------------------
+27	SS+All 黑名单	SS+All (black list)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS+All_RUS.txt	short
+28	VLESS 全量黑名单	VLESS full (black list)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt	short+full
+29	VLESS 150 黑名单	VLESS 150 (black list)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt	short
+30	白名单 Reality 移动 1	White-list Reality mobile 1	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt	short
+# 31：原项目指向 Vless-Reality-White-Lists-Rus-Mobile-2.txt，该文件已从上游移除（404），
+#     改指仍存在的 BLACK_SS_WEAK_DPI_RUS.txt。
+# 31: the original project pointed at Vless-Reality-White-Lists-Rus-Mobile-2.txt,
+#     which upstream removed (404); remapped to the still-present BLACK_SS_WEAK_DPI_RUS.txt.
+31	SS 弱 DPI 黑名单	SS weak-DPI (black list)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS_WEAK_DPI_RUS.txt	short
+32	白名单 CIDR 全量	White-list CIDR (all)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-all.txt	short+full
+33	白名单 CIDR 已校验	White-list CIDR (checked)	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt	short+full
+34	白名单 SNI	White-list SNI	https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt	short
+
+# --- goida 聚合镜像（默认只启用 < 250KB 的源） -------------------------------
+6	openproxylist	openproxylist	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/6.txt	short
+8	cid-vpn-config	cid-vpn-config	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/8.txt	short
+11	V2rayCollector	V2rayCollector	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/11.txt	short
+16	Free-servers	Free-servers	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/16.txt	short
+18	v2ray	v2ray	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/18.txt	short
+22	xray-config-toolkit	xray-config-toolkit	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/22.txt	short
+24	STRUGOV	STRUGOV	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/24.txt	short
+25	V2RayConfig	V2RayConfig	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/25.txt	short
+
+# --- 大体积源，默认关闭 / large sources, disabled by default -----------------
+# 1	OpenRay	OpenRay	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/1.txt	short
+# 2	5ubscrpt10n	5ubscrpt10n	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/2.txt	short
+# 3	proxy-minging	proxy-minging	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/3.txt	short
+# 4	AutoVPN	AutoVPN	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/4.txt	short
+# 5	V2RayCFGDumper	V2RayCFGDumper	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/5.txt	short
+# 7	v2ray-configs	v2ray-configs	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/7.txt	short
+# 9	telegram-v2ray-configs	telegram-v2ray-configs	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/9.txt	short
+# 10	.proxy	.proxy	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/10.txt	short
+# 12	.proxy	.proxy	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/12.txt	short
+# 13	config	config	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/13.txt	short
+# 14	Mineral	Mineral	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/14.txt	short
+# 15	Config-Collector	Config-Collector	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/15.txt	short
+# 17	V2rayCollector_Py	V2rayCollector_Py	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/17.txt	short
+# 19	V2rayCollector	V2rayCollector	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/19.txt	short
+# 20	Proxy-List	Proxy-List	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/20.txt	short
+# 21	kamaji	kamaji	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/21.txt	short
+# 23	Xray	Xray	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/23.txt	short
+# 26	Обход SNI/CIDR	SNI/CIDR bypass	https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror/26.txt	short

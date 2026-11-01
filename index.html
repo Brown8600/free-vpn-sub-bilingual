@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免费订阅聚合 · Free VPN Subscription Aggregator</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#111b2e; --line:#1f2d47; --fg:#e6edf7; --dim:#93a4bf;
+    --accent:#3fb1ff; --ok:#3ddc97; --warn:#ffb86b; --bad:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",system-ui,sans-serif}
+  header{padding:28px 20px 8px;max-width:1080px;margin:0 auto}
+  h1{margin:0 0 6px;font-size:22px;letter-spacing:.2px}
+  .sub{color:var(--dim);font-size:13px}
+  main{max-width:1080px;margin:0 auto;padding:16px 20px 60px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0 24px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .card .n{font-size:24px;font-weight:700;color:var(--accent)}
+  .card .l{font-size:12px;color:var(--dim);margin-top:2px}
+  h2{font-size:15px;margin:26px 0 10px;color:var(--fg)}
+  h2 small{color:var(--dim);font-weight:400;font-size:12px;margin-left:6px}
+  table{width:100%;border-collapse:collapse;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#0e1728;color:var(--dim);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  tr:last-child td{border-bottom:0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfe3ff}
+  .tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;border:1px solid var(--line);color:var(--dim)}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  button{background:#16233a;color:var(--fg);border:1px solid var(--line);border-radius:8px;
+    padding:4px 10px;font-size:12px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  .note{background:#141f33;border:1px solid var(--line);border-left:3px solid var(--warn);
+    border-radius:8px;padding:12px 14px;color:var(--dim);font-size:13px;margin:18px 0}
+  footer{max-width:1080px;margin:0 auto;padding:0 20px 40px;color:var(--dim);font-size:12px}
+  #err{display:none;background:#2a1620;border:1px solid #55223a;color:#ffb0c0;
+    padding:12px 14px;border-radius:8px;margin:14px 0;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>免费订阅聚合 · Free VPN Subscription Aggregator</h1>
+  <div class="sub">
+    由 GitHub Actions 每 5 分钟自动聚合公开订阅并裁剪，非本项目提供的服务器。<br>
+    Auto-aggregated public subscriptions, refreshed every 5 minutes by GitHub Actions. Servers are not ours.
+  </div>
+</header>
+
+<main>
+  <div id="err"></div>
+
+  <div class="cards">
+    <div class="card"><div class="n" id="t-short">–</div><div class="l">短名单节点数 / unique short nodes</div></div>
+    <div class="card"><div class="n" id="t-full">–</div><div class="l">完整名单节点数 / unique full nodes</div></div>
+    <div class="card"><div class="n" id="t-src">–</div><div class="l">启用源 / enabled sources</div></div>
+    <div class="card"><div class="n" id="t-upd" style="font-size:14px">–</div><div class="l">数据变更时间 / last data change</div></div>
+  </div>
+
+  <h2>快速订阅 <small>quick subscribe · 客户端直接导入 / import in your client</small></h2>
+  <div class="note" id="quick">加载中… / loading…</div>
+
+  <h2>按来源 <small>per source</small></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>源 / Source</th>
+        <th>组 / Group</th>
+        <th>短名单 / Short</th>
+        <th>完整 / Full</th>
+        <th>状态 / Status</th>
+        <th>链接 / Link</th>
+      </tr>
+    </thead>
+    <tbody id="rows"><tr><td colspan="7" style="color:var(--dim)">加载中… / loading…</td></tr></tbody>
+  </table>
+
+  <div class="note">
+    <b>用法 / How to use</b><br>
+    1. 复制下面的 raw 链接，在 v2rayN / v2rayNG / Hiddify / NekoRay / V2Box 里「从 URL 添加订阅」。<br>
+    &nbsp;&nbsp;&nbsp;Copy the raw URL and add it as a subscription in your client.<br>
+    2. 短名单 ≤ 300 条，先测延迟再排序，客户端不易卡顿。<br>
+    &nbsp;&nbsp;&nbsp;The short list is capped so the client stays responsive; test ping and sort afterwards.<br>
+    3. 连不上就刷新订阅、换节点；免费节点随时失效，这是正常现象。<br>
+    &nbsp;&nbsp;&nbsp;If a node fails, refresh and pick another — free nodes die constantly, that is expected.<br>
+    4. 「完整」名单节点多，可能让客户端卡顿或崩溃。<br>
+    &nbsp;&nbsp;&nbsp;The full lists may lag or crash weaker clients.
+  </div>
+</main>
+
+<footer>
+  本项目只做公开数据的机械聚合与裁剪，不运营任何服务器，不对可用性与合法性作任何担保。请遵守所在地法律。<br>
+  This project only mechanically aggregates and trims public data. It runs no server and makes no guarantee of
+  availability or legality. Follow the law where you are.
+</footer>
+
+<script>
+const BASE = location.origin + location.pathname.replace(/[^/]*$/, '');
+// GitHub Pages 项目站点：<owner>.github.io/<repo>/ → 拼出 raw 订阅地址
+// GitHub Pages project site: <owner>.github.io/<repo>/ → build the raw URLs
+const _parts = location.pathname.split('/').filter(Boolean);
+const _owner = location.hostname.endsWith('github.io') ? location.hostname.split('.')[0] : '';
+const _repo  = _parts[0] || '';
+const RAW = (_owner && _repo)
+  ? `https://raw.githubusercontent.com/${_owner}/${_repo}/main/configs/`
+  : BASE + 'configs/';
+
+function el(tag, attrs, ...kids){
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs || {})) {
+    if (k === 'class') n.className = v; else n.setAttribute(k, v);
+  }
+  for (const kid of kids) n.append(kid);
+  return n;
+}
+function copy(text, btn){
+  navigator.clipboard?.writeText(text).then(() => {
+    const old = btn.textContent;
+    btn.textContent = '已复制 / copied';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+function badge(status){
+  const map = {ok:['ok','正常 / ok'], stale_kept:['warn','沿用旧数据 / stale'],
+               empty_kept:['warn','空,沿用旧数据 / empty'], fetch_failed:['bad','抓取失败 / failed'],
+               empty:['bad','无数据 / empty']};
+  const [cls, text] = map[status] || ['', status || '-'];
+  return el('span', {class: cls}, text);
+}
+
+async function main(){
+  let data;
+  try {
+    const r = await fetch(BASE + 'configs/counts.json', {cache:'no-store'});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    data = await r.json();
+  } catch (e) {
+    const box = document.getElementById('err');
+    box.style.display = 'block';
+    box.textContent = '读取 configs/counts.json 失败 / failed to load counts.json：' + e.message +
+      ' — 请通过 GitHub Pages 或本地 http 服务器打开，file:// 下浏览器会拦截 fetch。' +
+      ' (open via Pages or a local http server; file:// blocks fetch)';
+    return;
+  }
+
+  document.getElementById('t-short').textContent = data.totals?.short ?? '–';
+  document.getElementById('t-full').textContent  = data.totals?.full  ?? '–';
+  document.getElementById('t-src').textContent   = (data.sources || []).length;
+
+  // last-update.txt is written only on a real data change
+  fetch(BASE + 'configs/last-update.txt', {cache:'no-store'})
+    .then(r => r.ok ? r.text() : '')
+    .then(t => { document.getElementById('t-upd').textContent = (t || '—').trim().replace('T',' ').replace('Z',' UTC'); })
+    .catch(() => {});
+
+  // quick links
+  const quick = document.getElementById('quick');
+  quick.textContent = '';
+  for (const [label, file] of [['合并短名单 / merged short', 'all.short.txt'],
+                               ['合并完整 / merged full', 'all.full.txt']]) {
+    const url = RAW + file;
+    quick.append(el('div', {class:'row'},
+      el('b', {}, label + '：'),
+      el('code', {}, url),
+      el('button', {}, '复制 / copy')
+    ));
+    quick.lastChild.querySelector('button')
+      .addEventListener('click', ev => copy(url, ev.target));
+  }
+
+  // table
+  const tbody = document.getElementById('rows');
+  tbody.textContent = '';
+  for (const s of (data.sources || [])) {
+    const shortUrl = RAW + s.id + '.txt';
+    const fullUrl  = RAW + 'full/' + s.id + '.txt';
+    const links = el('div', {class:'row'});
+    links.append(el('a', {href: 'configs/' + s.id + '.txt'}, '短 / short'));
+    if (s.full > 0) links.append(el('a', {href: 'configs/full/' + s.id + '.txt'}, '完整 / full'));
+    links.append(el('button', {}, '复制短链接 / copy'));
+
+    const tr = el('tr', {},
+      el('td', {}, s.id),
+      el('td', {}, s.name_zh + ' / ' + s.name_en),
+      el('td', {}, el('span', {class:'tag'}, s.group)),
+      el('td', {}, String(s.short)),
+      el('td', {}, s.full > 0 ? String(s.full) : '—'),
+      el('td', {}, badge(s.status)),
+      el('td', {}, links)
+    );
+    links.querySelector('button').addEventListener('click', ev => copy(shortUrl, ev.target));
+    tbody.append(tr);
+  }
+}
+main();
+</script>
+</body>
+</html>

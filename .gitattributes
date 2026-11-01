@@ -1,0 +1,14 @@
+# 统一换行符：仓库内一律 LF，避免 Windows 下 checkout 出 CRLF 把 bash 脚本跑挂
+# Normalize line endings: LF in the repository. A CRLF build.sh fails on ubuntu runners
+# with "bad interpreter: /usr/bin/env bash^M".
+* text=auto eol=lf
+
+*.sh        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.tsv       text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.txt       text eol=lf
+*.html      text eol=lf
+LICENSE     text eol=lf
