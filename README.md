@@ -69,7 +69,7 @@ index.html                                双语订阅页
 | id | 源 | 组 |
 |---|---|---|
 | 27–34 | igareck/vpn-configs-for-russia（SS+All、VLESS 黑名单、白名单 Reality/CIDR/SNI） | igareck |
-| 6, 8, 11, 16, 18, 22, 24, 25 | goida 聚合镜像中的小体积文件 | goida |
+| 6, 8, 9, 11, 16, 18, 22, 23, 24, 25 | goida 聚合镜像中的小体积文件 | goida |
 
 `goida` 段的大文件（`2.txt` 单文件 100 MB）默认注释掉了，按需开。
 
@@ -152,7 +152,7 @@ Then run it once: **Actions → Update subscriptions → Run workflow**.
 | One specific source | `configs/<id>.txt` |
 | Everything (may lag) | `configs/all.full.txt`, `configs/full/<id>.txt` |
 
-Enabled by default: ids 27–34 (`igareck/vpn-configs-for-russia`) and 6, 8, 11, 16, 18, 22, 24, 25 (small goida files).
+Enabled by default: ids 27–34 (`igareck/vpn-configs-for-russia`) and 6, 8, 9, 11, 16, 18, 22, 23, 24, 25 (small goida files).
 Edit `sources.tsv` to add or remove sources — one TAB-separated line each, `#` comments allowed.
 
 ### Faster than 5 minutes
