@@ -86,7 +86,9 @@ curl -X POST \
   -d '{"ref":"main"}'
 ```
 
-放在 cron-job.org / Cloudflare Worker Cron / 你自己服务器的 crontab 里即可。**别真的每分钟跑**：GitHub 免费额度 2000 分钟/月，一次构建约 1 分钟，每分钟跑必超额；5–15 分钟是合理区间。
+放在 cron-job.org / Cloudflare Worker Cron / 你自己服务器的 crontab 里即可。
+
+**但别真的每分钟跑**：公开仓库的 Actions 分钟数是免费的（不限量），所以限制不在额度，而在两件事——① 上游仓库经不起每分钟一次抓取，那是不礼貌的刷流量；② 数据本身也不是每分钟变一次，纯属噪音。**5–15 分钟是合理区间**。（私有仓库才有 2000 分钟/月上限，一次构建约 1 分钟。）
 
 ### 本地跑
 
@@ -165,8 +167,12 @@ curl -X POST -H "Authorization: Bearer $GH_PAT" -H "Accept: application/vnd.gith
   -d '{"ref":"main"}'
 ```
 
-Use a fine-grained PAT with `Actions: write`. Do **not** actually run this every minute: the free plan gives
-2000 minutes/month and one build is ~1 minute. 5–15 minutes is the sane range.
+Use a fine-grained PAT with `Actions: write`.
+
+Do **not** actually run it every minute. Actions minutes are free and unlimited on public repositories, so cost is
+not the constraint — the constraints are that hammering the upstream repos every 60 seconds is rude traffic, and the
+data simply does not change that often. **5–15 minutes** is the sane range. (The 2000 minutes/month cap only applies
+to private repos, and one build is about 1 minute.)
 
 ### Local run
 
