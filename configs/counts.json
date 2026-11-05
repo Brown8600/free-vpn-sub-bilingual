@@ -3,27 +3,27 @@
   "max_short": 300,
   "sample_div": 4,
   "totals": {
-    "short": 1622,
-    "full": 2118
+    "short": 1522,
+    "full": 2019
   },
   "sources": [
-    { "id": "27", "name_zh": "SS+All 黑名单", "name_en": "SS+All (black list)", "group": "igareck", "short": 17, "full": 0, "status": "ok" },
-    { "id": "28", "name_zh": "VLESS 全量黑名单", "name_en": "VLESS full (black list)", "group": "igareck", "short": 98, "full": 98, "status": "ok" },
-    { "id": "29", "name_zh": "VLESS 150 黑名单", "name_en": "VLESS 150 (black list)", "group": "igareck", "short": 79, "full": 0, "status": "ok" },
-    { "id": "30", "name_zh": "白名单 Reality 移动 1", "name_en": "White-list Reality mobile 1", "group": "igareck", "short": 14, "full": 0, "status": "ok" },
-    { "id": "31", "name_zh": "SS 弱 DPI 黑名单", "name_en": "SS weak-DPI (black list)", "group": "igareck", "short": 21, "full": 0, "status": "ok" },
-    { "id": "32", "name_zh": "白名单 CIDR 全量", "name_en": "White-list CIDR (all)", "group": "igareck", "short": 14, "full": 14, "status": "ok" },
-    { "id": "33", "name_zh": "白名单 CIDR 已校验", "name_en": "White-list CIDR (checked)", "group": "igareck", "short": 1, "full": 1, "status": "empty_kept" },
+    { "id": "27", "name_zh": "SS+All 黑名单", "name_en": "SS+All (black list)", "group": "igareck", "short": 12, "full": 0, "status": "ok" },
+    { "id": "28", "name_zh": "VLESS 全量黑名单", "name_en": "VLESS full (black list)", "group": "igareck", "short": 11, "full": 11, "status": "ok" },
+    { "id": "29", "name_zh": "VLESS 150 黑名单", "name_en": "VLESS 150 (black list)", "group": "igareck", "short": 19, "full": 0, "status": "ok" },
+    { "id": "30", "name_zh": "白名单 Reality 移动 1", "name_en": "White-list Reality mobile 1", "group": "igareck", "short": 8, "full": 0, "status": "ok" },
+    { "id": "31", "name_zh": "SS 弱 DPI 黑名单", "name_en": "SS weak-DPI (black list)", "group": "igareck", "short": 17, "full": 0, "status": "ok" },
+    { "id": "32", "name_zh": "白名单 CIDR 全量", "name_en": "White-list CIDR (all)", "group": "igareck", "short": 10, "full": 10, "status": "ok" },
+    { "id": "33", "name_zh": "白名单 CIDR 已校验", "name_en": "White-list CIDR (checked)", "group": "igareck", "short": 2, "full": 2, "status": "ok" },
     { "id": "34", "name_zh": "白名单 SNI", "name_en": "White-list SNI", "group": "igareck", "short": 1, "full": 0, "status": "ok" },
-    { "id": "6", "name_zh": "openproxylist", "name_en": "openproxylist", "group": "goida", "short": 143, "full": 0, "status": "ok" },
-    { "id": "8", "name_zh": "cid-vpn-config", "name_en": "cid-vpn-config", "group": "goida", "short": 198, "full": 0, "status": "ok" },
+    { "id": "6", "name_zh": "openproxylist", "name_en": "openproxylist", "group": "goida", "short": 130, "full": 0, "status": "ok" },
+    { "id": "8", "name_zh": "cid-vpn-config", "name_en": "cid-vpn-config", "group": "goida", "short": 206, "full": 0, "status": "ok" },
     { "id": "11", "name_zh": "V2rayCollector", "name_en": "V2rayCollector", "group": "goida", "short": 300, "full": 0, "status": "ok" },
-    { "id": "16", "name_zh": "Free-servers", "name_en": "Free-servers", "group": "goida", "short": 10, "full": 0, "status": "ok" },
-    { "id": "18", "name_zh": "v2ray", "name_en": "v2ray", "group": "goida", "short": 69, "full": 0, "status": "ok" },
-    { "id": "22", "name_zh": "xray-config-toolkit", "name_en": "xray-config-toolkit", "group": "goida", "short": 178, "full": 0, "status": "ok" },
+    { "id": "16", "name_zh": "Free-servers", "name_en": "Free-servers", "group": "goida", "short": 8, "full": 0, "status": "ok" },
+    { "id": "18", "name_zh": "v2ray", "name_en": "v2ray", "group": "goida", "short": 83, "full": 0, "status": "ok" },
+    { "id": "22", "name_zh": "xray-config-toolkit", "name_en": "xray-config-toolkit", "group": "goida", "short": 211, "full": 0, "status": "ok" },
     { "id": "24", "name_zh": "STRUGOV", "name_en": "STRUGOV", "group": "goida", "short": 300, "full": 0, "status": "ok" },
     { "id": "25", "name_zh": "V2RayConfig", "name_en": "V2RayConfig", "group": "goida", "short": 196, "full": 0, "status": "ok" },
-    { "id": "9", "name_zh": "telegram-v2ray-configs", "name_en": "telegram-v2ray-configs", "group": "goida", "short": 221, "full": 0, "status": "ok" },
-    { "id": "23", "name_zh": "Xray", "name_en": "Xray", "group": "goida", "short": 16, "full": 0, "status": "ok" }
+    { "id": "9", "name_zh": "telegram-v2ray-configs", "name_en": "telegram-v2ray-configs", "group": "goida", "short": 216, "full": 0, "status": "ok" },
+    { "id": "23", "name_zh": "Xray", "name_en": "Xray", "group": "goida", "short": 12, "full": 0, "status": "ok" }
   ]
 }

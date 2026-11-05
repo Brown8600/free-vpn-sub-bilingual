@@ -1,5 +1,6 @@
 # 源 / Source: 33 · 白名单 CIDR 已校验 / White-list CIDR (checked)
-# 类型 / Kind: 完整名单 / full — 全部 1 条 / all 1 nodes（客户端可能卡顿 / may lag the client）
+# 类型 / Kind: 完整名单 / full — 全部 2 条 / all 2 nodes（客户端可能卡顿 / may lag the client）
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-vless://0408e624-0d2a-49bc-8c1c-cbcf5fb75328@84.201.145.167:51191?type=tcp&security=reality&flow=xtls-rprx-vision&pbk=PfSDTeA5VEg8LgrpBG5zf2kDU3P2wc9c9bA_9SbCeVY&sid=6ba85179e30d4fc2&sni=yandex.ru&fp=chrome#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%7C%20%5B%2ACIDR%5D%20YA
+vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?alpn=http%2F1.1%2Ch2&encryption=none&headerType=none&host=flatcrest.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=flatcrest.net&type=xhttp&fp=safari#%F0%9F%87%A7%F0%9F%87%AC%20Bulgaria%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D%20CDN
+vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:2053?alpn=http%2F1.1%2Ch2&encryption=none&extra=null&host=flatcrest.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=flatcrest.net&type=xhttp&fp=chrome#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D%20CDN
