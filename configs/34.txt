@@ -2,4 +2,4 @@
 # 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-vless://0f81141f-8290-4a47-b1fa-c5761e39f7f0@2.26.3.89:8443?flow=xtls-rprx-vision&security=reality&sni=dzen.ru&fp=firefox&pbk=U4eg2bwFbsthGPg-9Q6beiK25kGpUA6WgmDXTO3D7S8&sid=6fbe10cb38739aab#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%5BSNI-RU%5D%20dzen.ru
+vless://90157e25-cee1-4217-921e-91f300bc1a24@novonl.subv.ru:443?security=reality&encryption=none&pbk=1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs&host=%2F%3FTelegram---%40pirozi_ArGaP---%40pirozi_ArGaP---%40pirozi_ArGaP---%40pirozi_ArGaP&headerType=none&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=golos.mail.ru&sid=428ef87fd47a3a32&fp=chrome#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%7C%20%5BSNI-RU%5D%20golos.mail.ru
