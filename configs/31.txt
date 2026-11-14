@@ -1,5 +1,6 @@
 # 源 / Source: 31 · SS 弱 DPI 黑名单 / SS weak-DPI (black list)
-# 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
+# 类型 / Kind: 短名单 / short — 全量 / all (2 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS_WEAK_DPI_RUS.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6Wk1OVEdwUGwzOEFTbGJJMUVLT0JK@135.220.178.46:46303#%F0%9F%87%A9%F0%9F%87%AA%20Germany%2C%20Frankfurt%20am%20Main%20%7C%20%5BBL%5D
+ss://eGNoYWNoYTIwLWlldGYtcG9seTEzMDU6ckcxdWg1TXkyczhKeXR0NG91U3Y2OGxqb1EraU5wSFQ5bXkvblJndFBBbz0=@dlc.deltapc.digital:12947#%F0%9F%87%B3%F0%9F%87%AC%20Nigeria%2C%20Lagos%20%7C%20%5BBL%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpINHRfalhUUzc1QTQ1WTM2bThzbnNDdDJ2RnRQVHI0MQ@204.10.192.116:38087#%F0%9F%87%B9%F0%9F%87%B7%20Turkey%2C%20Ba%C5%9Fak%C5%9Fehir%20%7C%20%5BBL%5D
