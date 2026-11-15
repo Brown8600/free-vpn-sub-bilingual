@@ -1,6 +1,7 @@
 # 源 / Source: 33 · 白名单 CIDR 已校验 / White-list CIDR (checked)
-# 类型 / Kind: 完整名单 / full — 全部 2 条 / all 2 nodes（客户端可能卡顿 / may lag the client）
+# 类型 / Kind: 完整名单 / full — 全部 3 条 / all 3 nodes（客户端可能卡顿 / may lag the client）
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-vless://3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5@185.86.145.55:10470?alpn=h2&security=tls&serviceName=wn-adaptcloud&sni=wn-pl4.static-s3.org&type=grpc&fp=chrome#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%7C%20%5B%2ACIDR%5D%20VK
-vless://9548ef84-b54d-41dc-b17c-9da21d52ba82@212.233.90.78:443?flow=xtls-rprx-vision&security=reality&sni=birch-ledger.justext.space&pbk=FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ&sid=2c6df23e&fp=edge#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%7C%20%5B%2ACIDR%5D%20VK
+vless://3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5@46.243.233.165:59715?encryption=none&fp=firefox&mode=gun&security=tls&serviceName=wn-adaptcloud&sni=wn-pl4.static-s3.org&type=grpc#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%5B%2ACIDR%5D%20CDN
+vless://IMBAVPN_0324997b_6@84.201.159.237:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=cdn.mislii.ru&pbk=SldmtPjMF2e1VIHIV8xtKeJegHkYrVEiweFLrtpeNCs&sid=9d87ec0065d30fa6&fp=chrome&spx=%2F#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5B%2ACIDR%5D%20YA
+vless://9548ef84-b54d-41dc-b17c-9da21d52ba82@212.233.90.78:443?encryption=none&flow=xtls-rprx-vision&pbk=FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ&security=reality&sid=2c6df23e&sni=birch-ledger.justext.space&spx=%2F&type=tcp&fp=edge#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%5B%2ACIDR%5D%20VK
