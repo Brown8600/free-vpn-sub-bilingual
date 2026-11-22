@@ -1,5 +1,6 @@
 # 源 / Source: 33 · 白名单 CIDR 已校验 / White-list CIDR (checked)
-# 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
+# 类型 / Kind: 短名单 / short — 全量 / all (2 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-vless://37af0181-5598-4aad-a040-d926bcb65757@185.86.145.173:443?alpn=h2%2Chttp%2F1.1&encryption=none&extra=null&host=wholebeam.com&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=wholebeam.com&type=xhttp&fp=chrome#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%7C%20%5B%2ACIDR%5D%20VK
+vless://b80e9046-5bb9-4040-bd96-b7e2f78b5c5b@185.86.147.77:10020?flow=xtls-rprx-vision&type=tcp&security=reality&fp=chrome&sni=2gis.ru&pbk=SraiH4q6X-jSm6Ru2FHcGjhoClg6gI0b9CWjdyu0rxA&sid=c68d384ac0fb220a#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20%5B%2ACIDR%5D%20VK
+vless://37af0181-5598-4aad-a040-d926bcb65757@185.86.145.173:443?alpn=h2%2Chttp%2F1.1&encryption=none&extra=null&fp=chrome&host=wholebeam.com&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=wholebeam.com&type=xhttp#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D%20VK
