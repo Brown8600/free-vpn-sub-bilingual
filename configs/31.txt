@@ -1,5 +1,8 @@
 # 源 / Source: 31 · SS 弱 DPI 黑名单 / SS weak-DPI (black list)
-# 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
+# 类型 / Kind: 短名单 / short — 全量 / all (4 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS_WEAK_DPI_RUS.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6Wk1OVEdwUGwzOEFTbGJJMUVLT0JK@135.220.178.46:46303#%F0%9F%87%A9%F0%9F%87%AA%20Germany%2C%20Frankfurt%20am%20Main%20%7C%20%5BBL%5D
+ss://YWVzLTI1Ni1nY206TXlTZWNyZXRQYXNzMTIz@43.161.217.165:80#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%2C%20Charleston%20%7C%20%5BBL%5D
+ss://YWVzLTI1Ni1nY206TXlTZWNyZXRQYXNzMTIz@43.161.217.165:8388#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%2C%20Charleston%20%7C%20%5BBL%5D
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTppNFBSU2h2YTUxZ015aWRWWDhrVWkyYWhwWDg0RWE3eA@89.104.71.85:1080#%F0%9F%87%B7%F0%9F%87%BA%20Russia%2C%20Moscow%20%7C%20%5BBL%5D
+ss://YWVzLTI1Ni1nY206TlRpSEJnNjRmc1k4dThEYkdydHlwRDlnUEdTTDM4NnA=@46.17.42.129:18443#%F0%9F%87%B7%F0%9F%87%BA%20Russia%2C%20Sheremet%27yevskiy%20%7C%20%5BBL%5D
