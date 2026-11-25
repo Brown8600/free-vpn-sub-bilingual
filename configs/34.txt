@@ -1,6 +1,5 @@
 # 源 / Source: 34 · 白名单 SNI / White-list SNI
-# 类型 / Kind: 短名单 / short — 全量 / all (2 nodes), 上限 / cap 300
+# 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-SNI-RU-all.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-vless://43add026-128a-47d3-a403-b3875b4638db@assets.fernstatic.com:8444?encryption=none&mode=gun&pbk=1hJPKCOTjPXm93o2JEeb-dOuFSkCvHj41uKM6yrP32Q&security=reality&serviceName=grpc&sid=bcefc042d39188e0&sni=yastatic.net&type=grpc&fp=android#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%7C%20%5BSNI-RU%5D%20yastatic.net
-vless://43add026-128a-47d3-a403-b3875b4638db@assets.fernstatic.com:8446?encryption=none&mode=auto&path=%2Fsomonxh&pbk=1hJPKCOTjPXm93o2JEeb-dOuFSkCvHj41uKM6yrP32Q&security=reality&sid=bcefc042d39188e0&sni=yastatic.net&type=xhttp&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%7C%20%5BSNI-RU%5D%20yastatic.net
+vless://c28bd116-61d1-44bf-a3e2-589978d247f2@bs.u2.1kub1.click:2096?encryption=none&type=grpc&security=reality&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&serviceName=vless-grpc-reality&fp=android#%F0%9F%87%B3%F0%9F%87%B4%20Norway%20%7C%20%F0%9F%8C%90%20%7C%20%5BSNI-RU%5D%20id.vk.com
