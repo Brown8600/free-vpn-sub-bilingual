@@ -2,4 +2,4 @@
 # 类型 / Kind: 短名单 / short — 全量 / all (1 nodes), 上限 / cap 300
 # 上游 / Upstream: https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_SS_WEAK_DPI_RUS.txt
 # 说明 / Note: 自动聚合的公开订阅，非本项目提供的服务器 / auto-aggregated public list; servers are not ours
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo2ZGFMcVYzQWpVYjM@108.181.124.226:443#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%2C%20Amsterdam%20%7C%20%5BBL%5D
+ss://YWVzLTEyOC1nY206WU55TUJ2YzYwT0h4YXM1cmtZS25SZEZka1hNYiswdTY@66.23.204.190:12085#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%2C%20Chicago%20%7C%20%5BBL%5D
